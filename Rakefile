@@ -23,8 +23,8 @@ spec = Gem::Specification.new do |s|
   s.email             = "weppos@weppos.net"
   s.homepage          = "http://simonecarletti.com/code/breadcrumbs_on_rails/"
 
-  s.files             = `git ls-files`.split("\n")
-  s.test_files        = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.files             =  FileList.new('**/*', '**/.*').exclude('Gemfile.lock').exclude{ |f| File.directory?(f)}   # `git ls-files`.split("\n")
+  s.test_files        =  FileList.new('test/**/*.*', 'spec/**/*.*', 'features/**/*.*') #`git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths     = %w( lib )
 
   s.add_development_dependency "rails", ">= 4.0"
