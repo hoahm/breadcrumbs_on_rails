@@ -6,4 +6,4 @@ gemfile:
   - gemfiles/4.0.gemfile
 notifications:
   recipients:
-    - weppos@weppos.net
+    - techdev-pub@ashleycaroline.com
